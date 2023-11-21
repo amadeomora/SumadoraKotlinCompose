@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.update
 
 class SumadoraViewModel : ViewModel() {
 
-    private val _uiState = MutableStateFlow(SumadoraUiState(mutableListOf()))
+    private val _uiState = MutableStateFlow(SumadoraUiState())
     val uiState: StateFlow<SumadoraUiState> = _uiState
 
     fun update(
@@ -16,7 +16,7 @@ class SumadoraViewModel : ViewModel() {
     ) {
         _uiState.update {
             it.copy(
-                historico = it.historico.toMutableList().apply { add(currentSuma) }
+                historico = it.historico.toMutableList().apply { add(currentSuma) },
             )
         }
     }

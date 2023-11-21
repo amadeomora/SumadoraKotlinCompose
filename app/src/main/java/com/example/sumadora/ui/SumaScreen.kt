@@ -60,23 +60,26 @@ fun SumaScreen(
 
         Button(
             onClick = {
-                val numero1 = input1.toDoubleOrNull() ?: 0.0
-                val numero2 = input2.toDoubleOrNull() ?: 0.0
-                val suma = numero1 + numero2
-                val mensajeSuma = "$numero1 + $numero2 = $suma"
+                val mensajeSuma = mensajeSuma(input1, input2)
+                viewModel.update(mensajeSuma)
+                onClickButton(mensajeSuma)
 
                 input1 = ""
                 input2 = ""
-
-                viewModel.update(mensajeSuma)
-                onClickButton(mensajeSuma)
-            },
+            }
         ) {
             Text(
                 text = stringResource(R.string.sumar)
             )
         }
     }
+}
+
+fun mensajeSuma(input1: String, input2: String): String {
+    val numero1 = input1.toDoubleOrNull() ?: 0.0
+    val numero2 = input2.toDoubleOrNull() ?: 0.0
+    val suma = numero1 + numero2
+    return "$numero1 + $numero2 = $suma"
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

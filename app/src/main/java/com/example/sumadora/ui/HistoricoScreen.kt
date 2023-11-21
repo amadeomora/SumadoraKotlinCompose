@@ -19,10 +19,10 @@ import com.example.sumadora.models.SumadoraUiState
 @Composable
 fun HistoricoScreen(
     sumadoraUiState: SumadoraUiState,
-    onBackClick: () -> Unit = {}
+    onClickButton: () -> Unit = {}
 ) {
     val ultimoIndice = sumadoraUiState.historico.size - 1
-    val ultimaSuma = sumadoraUiState.historico[ultimoIndice] ?: ""
+    val ultimaSuma = sumadoraUiState.historico[ultimoIndice]
 
     Column(
         modifier = Modifier.verticalScroll(rememberScrollState()),
@@ -56,7 +56,7 @@ fun HistoricoScreen(
 
         Row() {
             Button(
-                onClick = { onBackClick() },
+                onClick = { onClickButton() },
             ) {
                 Text(stringResource(R.string.volver_atras))
             }

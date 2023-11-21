@@ -57,7 +57,7 @@ fun SumadoraApp(
             composable(route = SumadoraScreen.HistoricoScreen.name) {
                 HistoricoScreen(
                     sumadoraUiState = uiState,
-                    onBackClick = {
+                    onClickButton = {
                         navController.popBackStack()
                     }
                 )
