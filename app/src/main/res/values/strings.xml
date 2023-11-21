@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Sumadora</string>
+    <string name="sumadora">Sumadora</string>
+    <string name="primer_numero">Primer número</string>
+    <string name="segundo_numero">Segundo número</string>
+    <string name="sumar">+</string>
+    <string name="historico_de_sumas">Histórico de operaciones</string>
+    <string name="volver_atras">Volver atrás</string>
+    <string name="ultima_suma">Última operación</string>
+</resources>
