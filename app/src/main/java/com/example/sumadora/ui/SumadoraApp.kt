@@ -26,14 +26,14 @@ enum class SumadoraScreen {
 @Composable
 fun SumadoraApp(
     viewModel: SumadoraViewModel = viewModel(),
-    navController: NavHostController = rememberNavController(),
+    navController: NavHostController = rememberNavController()
 ) {
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
                     Text(text = stringResource(R.string.sumadora))
-                },
+                }
             )
         }
     ) { innerPadding ->

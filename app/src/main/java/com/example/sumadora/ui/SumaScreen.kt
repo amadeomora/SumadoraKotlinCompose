@@ -45,7 +45,7 @@ fun SumaScreen(
                 imeAction = ImeAction.Next
             ),
             value = input1,
-            onValueChanged = { input1 = it },
+            onValueChanged = { input1 = it }
         )
 
         EditNumberField(
@@ -55,7 +55,7 @@ fun SumaScreen(
                 imeAction = ImeAction.Next
             ),
             value = input2,
-            onValueChanged = { input2 = it },
+            onValueChanged = { input2 = it }
         )
 
         Button(

@@ -1,9 +1,7 @@
 package com.example.sumadora.ui
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -14,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.sumadora.R
-import com.example.sumadora.models.SumadoraUiState
 
 @Composable
 fun HistoricoScreen(
@@ -30,36 +27,29 @@ fun HistoricoScreen(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = stringResource(R.string.ultima_suma),
+            text = stringResource(R.string.ultima_suma)
         )
-
-        Box() {
-            Text(
-                text = ultimaSuma
-            )
-        }
 
         Text(
-            text = stringResource(R.string.historico_de_sumas),
+            text = ultimaSuma
         )
 
-        Box() {
-            Column(
-            ) {
-                for (suma: String in sumadoraUiState.historico) {
-                    Text(
-                        text = suma
-                    )
-                }
+        Text(
+            text = stringResource(R.string.historico_de_sumas)
+        )
+
+        Column {
+            for (suma: String in sumadoraUiState.historico) {
+                Text(
+                    text = suma
+                )
             }
         }
 
-        Row() {
-            Button(
-                onClick = { onClickButton() },
-            ) {
-                Text(stringResource(R.string.volver_atras))
-            }
+        Button(
+            onClick = { onClickButton() }
+        ) {
+            Text(stringResource(R.string.volver_atras))
         }
     }
 }
